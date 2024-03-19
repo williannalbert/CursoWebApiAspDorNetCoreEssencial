@@ -1,5 +1,6 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Models;
+using APICatalogo.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,17 +10,29 @@ namespace APICatalogo.Controllers;
 public class CategoriasController : ControllerBase
 {
     private readonly AppDbContext _context;
-    public CategoriasController(AppDbContext context)
+    private readonly IConfiguration _configuration;
+    public CategoriasController(AppDbContext context, IConfiguration configuration)
     {
         _context = context;
-    }
+        _configuration = configuration;
 
+    }
+    [HttpGet("LerArquivoConfiguracao")]
+    public string GetValores()
+    {
+        var valor1 = _configuration["chave1"];
+        var valor2 = _configuration["chave2"];
+
+        var secao1 = _configuration["secao1:chave2"];
+
+        return $"Chave1 = {valor1}  \nChave2 = {valor2}  \nSeção1 => Chave2 = {secao1}";
+    }
     [HttpGet("produtos")]
-    public ActionResult<IEnumerable<Categoria>> GetCategoriasProdutos()
+    public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriasProdutos()
     {
         try
         {
-            return _context.Categorias.Include(p => p.Produtos).ToList();
+            return await _context.Categorias.Include(p => p.Produtos).ToListAsync();
         }
         catch (Exception)
         {
@@ -29,11 +42,11 @@ public class CategoriasController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Categoria>> Get()
+    public async Task<ActionResult<IEnumerable<Categoria>>> Get()
     {
         try
         {
-            return _context.Categorias.AsNoTracking().ToList();
+            return await _context.Categorias.AsNoTracking().ToListAsync();
         }
         catch (Exception)
         {
@@ -125,5 +138,10 @@ public class CategoriasController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError,
                            "Ocorreu um problema ao tratar a sua solicitação.");
         }
+    }
+    [HttpGet("servico/{nome}")]
+    public ActionResult<string> GetSaudacaoFromServices(IMeuServico meuServico, string nome)
+    {
+        return meuServico.Saudacao(nome);
     }
 }

@@ -1,0 +1,34 @@
+----------------------------------------------------------------------------
+Versões de framework e pacotes
+----------------------------------------------------------------------------
+
+.Net - versão 8.0
+
+Pomelo.EntityFrameworkCore.MySql - versão 8.0.1
+Microsoft.EntityFrameworkCore.Design - versão 8.0.1
+
+----------------------------------------------------------------------------
+PASSO A PASSO
+----------------------------------------------------------------------------
+1 - criar uma web api no visual studio 
+
+2 - instalar os pacotes e comandos necessários para manipulação do banco de dados
+Pomelo...MySql
+Entity...Design
+
+dotnet tool install --global doenet-ef
+dotnet tool update --global doenet-ef
+dotnet ef
+dotnet tool update --global dotnet-ef --version 7.0.10
+
+----------------------------------------------------------------------------
+MIGRATIONS
+----------------------------------------------------------------------------
+dotnet ef migrations add nomeDaMigracao
+
+dotnet ef database update
+
+----------------------------------------------------------------------------
+DICAS - OBSERVAÇÕES
+----------------------------------------------------------------------------
+- Quando uma classe model é criada, ao usar o identificador Id ou NomeClasseId, o próprio .net identifica esse campo como o identificador do dado (chave primaria)
