@@ -1,5 +1,6 @@
 using APICatalogo.Context;
-using APICatalogo.Services;
+using APICatalogo.Extensions;
+using APICatalogo.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -20,7 +21,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseMySql(mySqlConnection,
                     ServerVersion.AutoDetect(mySqlConnection)));
 
-builder.Services.AddTransient<IMeuServico, MeuServico>();
+//builder.Services.AddTransient<IMeuServico, MeuServico>();
+builder.Services.AddScoped<ApiLoggingFilter>();
 
 var app = builder.Build();
 
@@ -29,6 +31,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ConfigureExceptionHandler();
 }
 
 app.UseHttpsRedirection();
