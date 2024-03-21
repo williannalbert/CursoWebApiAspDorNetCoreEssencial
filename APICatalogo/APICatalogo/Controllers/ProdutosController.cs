@@ -15,17 +15,6 @@ public class ProdutosController : ControllerBase
         _context = context;
     }
 
-    //[HttpGet("{valor:alpha:length(3)}")]
-    //public ActionResult<Produto> Get2()
-    //{
-    //    var produto = _context.Produtos.FirstOrDefault();
-    //    if (produto is null)
-    //    {
-    //        return NotFound();
-    //    }
-    //    return produto;
-    //}
-
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Produto>>> Get()
     {
