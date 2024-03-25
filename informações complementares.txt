@@ -6,6 +6,8 @@ Versões de framework e pacotes
 
 Pomelo.EntityFrameworkCore.MySql - versão 8.0.1
 Microsoft.EntityFrameworkCore.Design - versão 8.0.1
+AutoMapper - versão 12.0.1
+AutoMapper.Extensions.Microsoft.DependencyInjection - versão 12.0.1
 
 ----------------------------------------------------------------------------
 PASSO A PASSO
