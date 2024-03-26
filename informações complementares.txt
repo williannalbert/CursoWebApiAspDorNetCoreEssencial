@@ -9,6 +9,10 @@ Microsoft.EntityFrameworkCore.Design - versão 8.0.1
 AutoMapper - versão 12.0.1
 AutoMapper.Extensions.Microsoft.DependencyInjection - versão 12.0.1
 
+--pacotes para trabalhar com http pacth e serializar o json
+Microsoft.AspNetCore.JsonPatch - versão 7.0.13
+Microsoft.AspNetCore.Mvc.NewtonsoftJson - versão 7.0.13
+
 ----------------------------------------------------------------------------
 PASSO A PASSO
 ----------------------------------------------------------------------------
