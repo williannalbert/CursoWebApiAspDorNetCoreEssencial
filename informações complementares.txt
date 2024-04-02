@@ -13,6 +13,9 @@ AutoMapper.Extensions.Microsoft.DependencyInjection - versão 12.0.1
 Microsoft.AspNetCore.JsonPatch - versão 7.0.13
 Microsoft.AspNetCore.Mvc.NewtonsoftJson - versão 7.0.13
 
+--pacote para trabalhar com paginação assíncrona
+X.PagedList.Mvc.Core - versão 8.4.7
+
 ----------------------------------------------------------------------------
 PASSO A PASSO
 ----------------------------------------------------------------------------
