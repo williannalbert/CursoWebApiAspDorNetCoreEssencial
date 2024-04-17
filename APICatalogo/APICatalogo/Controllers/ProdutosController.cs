@@ -72,7 +72,7 @@ public class ProdutosController : ControllerBase
         var produtos = await _uof.ProdutoRepository.GetProdutosFiltroPrecoAsync(produtosFilterParameters);
         return ObterProdutos(produtos);
     }
-    [Authorize]
+    [Authorize(Policy = "UserOnly")]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProdutoDTO>>> Get()
     {
