@@ -16,6 +16,10 @@ Microsoft.AspNetCore.Mvc.NewtonsoftJson - versão 7.0.13
 --pacote para trabalhar com paginação assíncrona
 X.PagedList.Mvc.Core - versão 8.4.7
 
+--pacotes JWT
+Microsoft.AspNetCore.Authentication.JwtBearer - versão 8.0.1
+Microsoft.AspNetCore.Identity.EntityFrameworkCore - versao 8.0.0
+
 ----------------------------------------------------------------------------
 PASSO A PASSO
 ----------------------------------------------------------------------------
@@ -28,7 +32,7 @@ Entity...Design
 dotnet tool install --global doenet-ef
 dotnet tool update --global doenet-ef
 dotnet ef
-dotnet tool update --global dotnet-ef --version 7.0.10
+dotnet tool update --global dotnet-ef --version 8.0.1
 
 ----------------------------------------------------------------------------
 MIGRATIONS
@@ -41,3 +45,18 @@ dotnet ef database update
 DICAS - OBSERVAÇÕES
 ----------------------------------------------------------------------------
 - Quando uma classe model é criada, ao usar o identificador Id ou NomeClasseId, o próprio .net identifica esse campo como o identificador do dado (chave primaria)
+
+----------------------------------------------------------------------------
+IDENTITY - PASSOS
+----------------------------------------------------------------------------
+1 - instalar os pacotes nuget
+
+2 - alterar a context para IdentityDbContext
+
+3 - Configurar o Identity em Program
+
+4 - aplicar as migrations 
+dotnet ef migrations add NomeMigration --verbose
+dotnet ef database update --verbose
+
+dotnet ef migrations add CriaTabelasIdentity --verbose
