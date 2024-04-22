@@ -20,6 +20,9 @@ X.PagedList.Mvc.Core - versão 8.4.7
 Microsoft.AspNetCore.Authentication.JwtBearer - versão 8.0.1
 Microsoft.AspNetCore.Identity.EntityFrameworkCore - versao 8.0.0
 
+--Versionamento
+Asp.Versioning.Mvc.ApiExplorer - versao 8.0
+Asp.Versioning.Http - versao 8.0
 ----------------------------------------------------------------------------
 PASSO A PASSO
 ----------------------------------------------------------------------------
@@ -45,7 +48,7 @@ dotnet ef database update
 DICAS - OBSERVAÇÕES
 ----------------------------------------------------------------------------
 - Quando uma classe model é criada, ao usar o identificador Id ou NomeClasseId, o próprio .net identifica esse campo como o identificador do dado (chave primaria)
-
+incluir [ApiExplorerSettings(IgnoreApi = true)] no controlador ou rota ignora os endpoints na documentação
 ----------------------------------------------------------------------------
 IDENTITY - PASSOS
 ----------------------------------------------------------------------------
@@ -60,3 +63,4 @@ dotnet ef migrations add NomeMigration --verbose
 dotnet ef database update --verbose
 
 dotnet ef migrations add CriaTabelasIdentity --verbose
+
