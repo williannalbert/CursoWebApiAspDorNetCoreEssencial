@@ -104,7 +104,12 @@ public class AuthController : ControllerBase
         }
         return BadRequest(new { error = "Unable to find user" });
     }
-
+    /// <summary>
+    /// Verifica as credenciais de um usuário
+    /// </summary>
+    /// <param name="model">Um objeto do tipo UsuarioDTO</param>
+    /// <returns>Status 200 e o token para o cliente</returns>
+    /// <remarks>Retorna o Status 200 e o token </remarks> 
     [HttpPost]
     [Route("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -152,7 +157,12 @@ public class AuthController : ControllerBase
         }
         return Unauthorized();
     }
- 
+    /// <summary>
+    /// Registra um novo usuário
+    /// </summary>
+    /// <param name="model">Um objeto UsuarioDTO</param>
+    /// <returns>Status 200 </returns>
+    /// <remarks>retorna o Status 200</remarks>
     [HttpPost]
     [Route("register")]
     public async Task<IActionResult> Register([FromBody] RegisterModel model)

@@ -4,6 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <IncludeOpenApiAnalyzers>true </IncludeOpenApiAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>

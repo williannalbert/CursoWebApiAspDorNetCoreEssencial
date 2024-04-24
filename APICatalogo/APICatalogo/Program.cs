@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.RateLimiting;
@@ -51,7 +52,26 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "apicatalogo", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo {
+        Version = "v1",
+        Title = "APICatalogo",
+        Description = "Catálogo de Produtos e Categorias",
+        TermsOfService = new Uri("https://siteexemplo.net/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Exemplo",
+            Email = "emailexemplo@yahoo.com",
+            Url = new Uri("https://www.siteexemplo.net"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Usar sobre LICX",
+            Url = new Uri("https://siteexemplo.net/license"),
+        }
+    });
+
+    var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
@@ -194,7 +214,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json",
+            "APICatalogo");
+    });
     app.ConfigureExceptionHandler();
 }
 
