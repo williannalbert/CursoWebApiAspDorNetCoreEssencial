@@ -64,3 +64,12 @@ dotnet ef database update --verbose
 
 dotnet ef migrations add CriaTabelasIdentity --verbose
 
+----------------------------------------------------------------------------
+PROJETO DE TESTES
+----------------------------------------------------------------------------
+Pacotes
+FluentAssertions - versão 6.12.0
+
+Criar um novo projeto na solução, do tipo Projeto de teste do xUnit
+
+Adicionar referência do projeto APICatalogo

@@ -79,23 +79,41 @@ public class ProdutosController : ControllerBase
     /// <returns>Retorna uma lista de objetos Produto</returns>
     [Authorize(Policy = "UserOnly")]
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<ProdutoDTO>>> Get()
     {
-        var produtos = await _uof.ProdutoRepository.GetAllAsync();
-        if (produtos is null)
-            return NotFound();
+        try
+        {
+            var produtos = await _uof.ProdutoRepository.GetAllAsync();
+            if (produtos is null)
+                return NotFound();
 
-        var produtosDto = _mapper.Map<IEnumerable<ProdutoDTO>>(produtos);
-        return Ok(produtosDto);
+            var produtosDto = _mapper.Map<IEnumerable<ProdutoDTO>>(produtos);
+            return Ok(produtosDto);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
+        
     }
     /// <summary>
     /// Obtem o produto pelo seu identificador id
     /// </summary>
     /// <param name="id">Código do produto</param>
     /// <returns>Um objeto Produto</returns>
+    /// 
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     [HttpGet("{id}", Name = "ObterProduto")]
     public async Task<ActionResult<ProdutoDTO>> Get(int id)
     {
+        if (id == null || id <= 0)
+            return BadRequest("Id inválido");
+
         var produto = await _uof.ProdutoRepository.GetAsync(c => c.ProdutoId == id);
         if (produto is null)
         {
@@ -106,6 +124,8 @@ public class ProdutosController : ControllerBase
     }
 
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<ProdutoDTO>> Post(ProdutoDTO produtoDto)
     {
         if (produtoDto is null)
