@@ -49,6 +49,8 @@ DICAS - OBSERVAÇÕES
 ----------------------------------------------------------------------------
 - Quando uma classe model é criada, ao usar o identificador Id ou NomeClasseId, o próprio .net identifica esse campo como o identificador do dado (chave primaria)
 incluir [ApiExplorerSettings(IgnoreApi = true)] no controlador ou rota ignora os endpoints na documentação
+
+incluir o modificador sealed define que a classe não pode ser herdada, usando somente o construtor para receber informações
 ----------------------------------------------------------------------------
 IDENTITY - PASSOS
 ----------------------------------------------------------------------------
@@ -73,3 +75,14 @@ FluentAssertions - versão 6.12.0
 Criar um novo projeto na solução, do tipo Projeto de teste do xUnit
 
 Adicionar referência do projeto APICatalogo
+
+----------------------------------------------------------------------------
+PROJETO CLEAN CODE - PASSOS
+----------------------------------------------------------------------------
+1 - criar uma solução vazia (blank solutionn)
+
+2 - adicionar os projetos na solução(tipo class library para todos, menos API, que será AspNet Web API)
+
+3 - aplicar os relacionamentos nas soluções (dependencias)
+
+4 - além do projeto pronto, foi necessário incluir o pacote do entity e efetuar as migrations
