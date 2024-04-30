@@ -86,3 +86,20 @@ PROJETO CLEAN CODE - PASSOS
 3 - aplicar os relacionamentos nas soluções (dependencias)
 
 4 - além do projeto pronto, foi necessário incluir o pacote do entity e efetuar as migrations
+
+----------------------------------------------------------------------------
+IIS - PASSOS
+----------------------------------------------------------------------------
+1 - ativar o IIS no windows através do "Recursos do Windows"
+
+serviços de informações da internet -> ferramentas de gerenciamento da web -> console de gerenciamento IIS
+serviços de informações da internet -> serviços da world wide web (selecionar todas as opções)
+
+2 - Baixar e instalar o ASP.NET Core 8.0 Runtime (v8.0.1) - Windows Hosting
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.1-windows-hosting-bundle-installer
+
+3 - criar arquivo do tipo web.config
+
+4 - recompilar solução e publicar novamente, criando um novo arquivo dee destino
+
+5 - no IIS clicar com botão direito em Sites -> adicionar site -> selecionar caminho de publicação -> selecionar porta -> salvar
