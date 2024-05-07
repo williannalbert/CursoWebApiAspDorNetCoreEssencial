@@ -103,3 +103,10 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
 4 - recompilar solução e publicar novamente, criando um novo arquivo dee destino
 
 5 - no IIS clicar com botão direito em Sites -> adicionar site -> selecionar caminho de publicação -> selecionar porta -> salvar
+
+6 - em pools de aplicativos -> clicar 2 vezes na aplicação -> selecionar versão do CLR como sem código
+
+----------------------------------------------------------------------------
+HTTP CLIENT FACTORY
+----------------------------------------------------------------------------
+1 - instalar o pacote Microsoft.Extensions.Http
