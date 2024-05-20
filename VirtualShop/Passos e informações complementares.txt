@@ -1,0 +1,20 @@
+Pacotes
+VirtualShop.ProductApi
+
+- Pomelo.EntityFrameworkCore.MySql - versão 6.0.1
+- Microsoft.EntityFrameworkCore.Design - versão 6.0.4
+
+Criação de Loja Virtual com Micro Serviços
+
+1 - criar solução em branco (blank solution)
+
+2 - adicionar novo projeto a solução (asp.net core web api) -> VirtualShop.ProductApi
+
+3 - criar models e aplicar seus relacionamentos
+
+4 - criar a context
+
+5 - definir string de conexão no appsettings.json
+
+6 - incluir na program.cs a configuração do mysql
+Dica: A context está recebendo a conexão e as options por injeção de dependencia das informações adicionadas na program
