@@ -1,9 +1,13 @@
 Pacotes
+-----------------------------------------------------------------------------------------------------
 VirtualShop.ProductApi
 
 - Pomelo.EntityFrameworkCore.MySql - versão 6.0.1
 - Microsoft.EntityFrameworkCore.Design - versão 6.0.4
+- AutoMapper.Extensions.Microsoft.DependencyInjection - versão 11.0.0
+- AutoMapper - versão 11.0.1
 
+-----------------------------------------------------------------------------------------------------
 Criação de Loja Virtual com Micro Serviços
 
 1 - criar solução em branco (blank solution)
@@ -18,3 +22,28 @@ Criação de Loja Virtual com Micro Serviços
 
 6 - incluir na program.cs a configuração do mysql
 Dica: A context está recebendo a conexão e as options por injeção de dependencia das informações adicionadas na program
+
+7 - na context, realizar as configurações de FluentAPI e sobrescrever cofigurações padrões
+
+8 - realizar a migração inicial 
+dotnet tool install --global dotnet-ef --version 6.0.0
+dotnet ef migrations add Inicial
+dotnet ed database update
+
+9 - Criar as DTOs
+adicionar DTOs, MappingProfile e adicionar automapper ao program.cs
+
+10 - Criar os repositórios
+
+11 - Criar os serviços e controllers
+*lembrar de adicionar o IgnoreCycles ao controller na program.cs
+
+-----------------------------------------------------------------------------------------------------
+DICAS GERAIS
+
+Para manipular migrações pode-se usar o EF Core Migrations : Ferramenta dotnet-ef
+Ex de comandos: dotnet ef migrations add <nome migração>
+
+Como alternativa é possivel instalar o microsoft.entityframeworkcore.tools
+Ex de comandos: add migrations <nome> e update database
+-----------------------------------------------------------------------------------------------------
