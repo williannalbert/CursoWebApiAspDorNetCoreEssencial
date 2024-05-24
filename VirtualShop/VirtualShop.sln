@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualShop.ProductApi", "VirtualShop.ProductApi\VirtualShop.ProductApi.csproj", "{28559870-A57E-478B-AB8D-0607F2970A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualShop.ProductApi", "VirtualShop.ProductApi\VirtualShop.ProductApi.csproj", "{28559870-A57E-478B-AB8D-0607F2970A4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualShop.Web", "VirtualShop.Web\VirtualShop.Web.csproj", "{335B4D87-7DC4-4120-AACD-075F150481ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{28559870-A57E-478B-AB8D-0607F2970A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28559870-A57E-478B-AB8D-0607F2970A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28559870-A57E-478B-AB8D-0607F2970A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335B4D87-7DC4-4120-AACD-075F150481ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335B4D87-7DC4-4120-AACD-075F150481ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335B4D87-7DC4-4120-AACD-075F150481ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335B4D87-7DC4-4120-AACD-075F150481ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

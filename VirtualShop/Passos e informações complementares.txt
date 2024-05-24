@@ -39,6 +39,21 @@ adicionar DTOs, MappingProfile e adicionar automapper ao program.cs
 *lembrar de adicionar o IgnoreCycles ao controller na program.cs
 
 -----------------------------------------------------------------------------------------------------
+Criação da aplicação MVC Web para consumir Api
+1 - adicionar novo projeto a solução (asp.net core web app - MVC) -> VirtualShop.Web
+*excluir view privacy e ajustar shared -> error
+
+2 - adicionar item existente -> imagem
+
+3 - adicionar font awesome ao projeto
+no arquivo views -> shared -> _layout foi adicionado o link do cdn
+
+4 - criar as models
+
+5 - criar os services e suas interfaces (contract)
+
+6 - adicionar o AddHttpClient na program.cs, com o serviço e seu nome
+-----------------------------------------------------------------------------------------------------
 DICAS GERAIS
 
 Para manipular migrações pode-se usar o EF Core Migrations : Ferramenta dotnet-ef
