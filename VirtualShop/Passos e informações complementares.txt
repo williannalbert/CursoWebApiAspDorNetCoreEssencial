@@ -7,6 +7,13 @@ VirtualShop.ProductApi
 - AutoMapper.Extensions.Microsoft.DependencyInjection - versão 11.0.0
 - AutoMapper - versão 11.0.1
 
+
+VirtualShop.IdentityServer
+- Duende.IdentityServer.AspNetIdentity - versão 6.1.0
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore - versão 6.0.5
+- Microsoft.AspNetCore.Identity.UI - versão 6.0.5
+- Pomelo.EntityFrameworkCore.MySql - versão 6.0.1
+- Microsoft.EntityFrameworkCore.Design - versão 6.0.5
 -----------------------------------------------------------------------------------------------------
 Criação de Loja Virtual com Micro Serviços
 
@@ -53,6 +60,26 @@ no arquivo views -> shared -> _layout foi adicionado o link do cdn
 5 - criar os services e suas interfaces (contract)
 
 6 - adicionar o AddHttpClient na program.cs, com o serviço e seu nome
+-----------------------------------------------------------------------------------------------------
+Criação da aplicação MVC Web
+1 - adicionar novo projeto a solução (asp.net core web app - MVC) -> VirtualShop.IdentityServer
+
+2 - instalar o Duende Software
+dotnet new --install Duende.IdentityServer.Templates::6.0.0
+
+3 - adicionar os arquivos da pasta razor view
+*a documentação sugere o uso do comando "dotnet new isui", mas será feita a inclusão de razor view manualmente conforme o curso
+
+4 - instalar pacotes
+
+5 - criar pasta Data e seus arquivos
+*referenciar no program.cs
+
+6 - criar pasta configuration e seus arquivos
+*referenciar no program.cs // adicionar o middleware app.UseIdentityServer();
+
+7 - reodar as migrações no banco
+
 -----------------------------------------------------------------------------------------------------
 DICAS GERAIS
 

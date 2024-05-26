@@ -5,7 +5,13 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualShop.ProductApi", "VirtualShop.ProductApi\VirtualShop.ProductApi.csproj", "{28559870-A57E-478B-AB8D-0607F2970A4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualShop.Web", "VirtualShop.Web\VirtualShop.Web.csproj", "{335B4D87-7DC4-4120-AACD-075F150481ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualShop.Web", "VirtualShop.Web\VirtualShop.Web.csproj", "{335B4D87-7DC4-4120-AACD-075F150481ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{F610D26A-B749-4484-96E9-03FE99698FCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{50317066-9096-499D-9125-E83630C3ACDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualShop.IdentityServer", "VirtualShop.IdentityServer\VirtualShop.IdentityServer.csproj", "{337B34F0-28B6-47F9-AFB6-EDAE192DE857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,18 @@ Global
 		{335B4D87-7DC4-4120-AACD-075F150481ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335B4D87-7DC4-4120-AACD-075F150481ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335B4D87-7DC4-4120-AACD-075F150481ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337B34F0-28B6-47F9-AFB6-EDAE192DE857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337B34F0-28B6-47F9-AFB6-EDAE192DE857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337B34F0-28B6-47F9-AFB6-EDAE192DE857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337B34F0-28B6-47F9-AFB6-EDAE192DE857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28559870-A57E-478B-AB8D-0607F2970A4A} = {50317066-9096-499D-9125-E83630C3ACDA}
+		{335B4D87-7DC4-4120-AACD-075F150481ED} = {F610D26A-B749-4484-96E9-03FE99698FCA}
+		{337B34F0-28B6-47F9-AFB6-EDAE192DE857} = {50317066-9096-499D-9125-E83630C3ACDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5E1BA3DC-A469-437A-BF51-36EE336A4B97}
