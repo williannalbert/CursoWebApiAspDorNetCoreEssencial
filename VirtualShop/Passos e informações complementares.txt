@@ -6,7 +6,7 @@ VirtualShop.ProductApi
 - Microsoft.EntityFrameworkCore.Design - versão 6.0.4
 - AutoMapper.Extensions.Microsoft.DependencyInjection - versão 11.0.0
 - AutoMapper - versão 11.0.1
-
+- Microsoft.AspNetCore.Authentication.JwtBearer - versão 6.0.6
 
 VirtualShop.IdentityServer
 - Duende.IdentityServer.AspNetIdentity - versão 6.1.0
@@ -14,6 +14,11 @@ VirtualShop.IdentityServer
 - Microsoft.AspNetCore.Identity.UI - versão 6.0.5
 - Pomelo.EntityFrameworkCore.MySql - versão 6.0.1
 - Microsoft.EntityFrameworkCore.Design - versão 6.0.5
+
+VirtualShop.Web
+- Microsoft.AspNetCore.Authentication - versão 2.2.0
+- Microsoft.AspNetCore.Authentication.OpenIdConnect - versão 6.0.6
+- System.IdentityModel.Tokens.Jwt - versão 6.19.0
 -----------------------------------------------------------------------------------------------------
 Criação de Loja Virtual com Micro Serviços
 
@@ -45,6 +50,11 @@ adicionar DTOs, MappingProfile e adicionar automapper ao program.cs
 11 - Criar os serviços e controllers
 *lembrar de adicionar o IgnoreCycles ao controller na program.cs
 
+12 - após baixar o pacote do bearer, configurar o jwt e swagger na program.cs
+
+13 - em AccountContrller substituir tudo que for TestUserStore para o UserManager
+*validar todas as injeções e métodos com detalhes
+
 -----------------------------------------------------------------------------------------------------
 Criação da aplicação MVC Web para consumir Api
 1 - adicionar novo projeto a solução (asp.net core web app - MVC) -> VirtualShop.Web
@@ -60,6 +70,17 @@ no arquivo views -> shared -> _layout foi adicionado o link do cdn
 5 - criar os services e suas interfaces (contract)
 
 6 - adicionar o AddHttpClient na program.cs, com o serviço e seu nome
+
+7 - Criar a pasta Roles e seus arquivos
+
+8 - baixar os pacotes listados acima
+
+9 - adicionar o AddAuthentication na program e suas configurações
+
+10 - criar view link de login. Views -> shared -> _LoginPartial e adicionar a Views -> shared -> _layout
+*mesma que o identity usa
+
+11 - criar login e logout no homecontroller
 -----------------------------------------------------------------------------------------------------
 Criação da aplicação MVC Web
 1 - adicionar novo projeto a solução (asp.net core web app - MVC) -> VirtualShop.IdentityServer
@@ -79,7 +100,13 @@ dotnet new --install Duende.IdentityServer.Templates::6.0.0
 *referenciar no program.cs // adicionar o middleware app.UseIdentityServer();
 
 7 - reodar as migrações no banco
+dotnet ef migrations add DatabaseIdentitServer
+dotnet ed database update
 
+8 - criar o seeder, para criar usuario e perfil no banco
+*referenciar no program.cs //adicionar ao escopo e SeedDatabaseIdentityServer
+
+9 - Criar a pasta Roles e seus arquivos
 -----------------------------------------------------------------------------------------------------
 DICAS GERAIS
 
